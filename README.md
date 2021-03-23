@@ -1,5 +1,5 @@
-[![GitHub issues](https://img.shields.io/github/issues/SebPasieka/azubi-challenges-java)](https://github.com/SebPasieka/azubi-challenges-java/issues)
-![GitHub repo size](https://img.shields.io/github/repo-size/SebPasieka/azubi-challenges-java)
+![GitHub issues](https://img.shields.io/github/issues/SebPasieka/azubi-challenges-java?logo=github&logoColor=blue&style=plastic)
+[![Tests](https://github.com/SebPasieka/azubi-challenges-java/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/SebPasieka/azubi-challenges-java/actions/workflows/gradle.yml)
 
 azubi-challenges
 ================
