@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import azubi.challenges.task002.UniqueCharsTester;
 
 public class UniqueCharsTesterTest {
-/*
+
     @Test
     public void wordWithSingleLetter_should_beTrue() {
         boolean actual = UniqueCharsTester.hasUniqueChars("a");
@@ -28,8 +28,7 @@ public class UniqueCharsTesterTest {
     @Test
     public void WordWithTwoSpaces_should_BeFalse() {
         boolean actual = UniqueCharsTester.hasUniqueChars("a bc d");
-        assertTrue(actual);
+        assertFalse(actual);
     }
 
- */
 }
