@@ -27,7 +27,7 @@ public class StringCompressorTest {
         assertEquals(actual, expected);
     }
 
-    @Test //?
+    @Test
     public void compress_shouldReturn_not_compressed_string() {
         String given = "aabbcc";
         String expected = "aabbcc";
