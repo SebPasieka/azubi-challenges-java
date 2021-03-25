@@ -24,6 +24,26 @@ public class StringCompressor {
      * @return compressed string
      */
     public static String compress(String input) {
-        throw new UnsupportedOperationException("Implement me!");
+        String originInput = input;
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < input.length(); i++) {
+
+            int count = 1;
+            while (i < input.length() - 1 &&
+                    input.charAt(i) == input.charAt(i + 1)) {
+                count++;
+                i++;
+            }
+            sb.append(input.charAt(i));
+            if (count != 1) {
+                sb.append(count);
+            }
+        }
+        input = sb.toString();
+        if (originInput.length() == input.length()) {
+            return originInput;
+        }
+        return input;
     }
 }

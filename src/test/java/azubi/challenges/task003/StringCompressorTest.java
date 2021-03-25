@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import azubi.challenges.task003.StringCompressor;
 
 public class StringCompressorTest {
-/*
+
     @Test
     public void compress_shouldReturn_same_string_when_empty() {
         String given = "";
@@ -27,7 +27,7 @@ public class StringCompressorTest {
         assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //?
     public void compress_shouldReturn_not_compressed_string() {
         String given = "aabbcc";
         String expected = "aabbcc";
@@ -77,5 +77,4 @@ public class StringCompressorTest {
         assertEquals(actual, expected);
     }
 
- */
 }
