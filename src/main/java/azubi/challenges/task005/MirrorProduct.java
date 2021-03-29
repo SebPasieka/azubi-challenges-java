@@ -6,7 +6,8 @@ import java.util.Objects;
 public class MirrorProduct {
 
     public static void main(String...args) {
-        findLargestMirrorProduct();
+
+        findLargestMirrorProduct(4);
     }
 
     /**
@@ -31,7 +32,32 @@ public class MirrorProduct {
      *   factor 2 = 1001 // 4 digits
      *   product =  1002001 // palindrome yes, but there are other factors resulting in a larger product 
      */
-    public static void findLargestMirrorProduct() {
-        // IMPLEMENT ME
+    public static int findLargestMirrorProduct(int digits) {
+        int upper_limit = (int)Math.pow(10, digits) - 1;
+        int lower_limit = 1 + upper_limit / 10;
+
+        int max_product = 0;
+
+        for (int i = upper_limit; i >= lower_limit; i--)
+        {
+            for (int j = i; j >= lower_limit; j--)
+            {
+                int product = i * j;
+                if (product < max_product) break;
+                int number = product;
+                int reverse = 0;
+
+                while (number != 0)
+                {
+                    reverse = reverse * 10 + number % 10;
+                    number /= 10;
+                }
+
+                if (product == reverse && product > max_product)
+                    max_product = product;
+            }
+        }
+        System.out.println("The largest Palindrome of two "+ digits +" digit factors is " + max_product);
+        return max_product;
     }
 }
