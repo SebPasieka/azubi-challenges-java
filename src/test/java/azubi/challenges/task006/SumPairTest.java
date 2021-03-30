@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import azubi.challenges.task006.SumPair;
 
 public class SumPairTest {
-/*
+
     @Test
     public void findSumPair_shouldReturn_false_ifNoNumbersGiven() {
         boolean actual = SumPair.sumPairExists(17, new int[0]);
@@ -24,7 +24,5 @@ public class SumPairTest {
         boolean actual = SumPair.sumPairExists(17, new int[] {10, 15, 3, 7});
         assertTrue(actual);
     }
-
- */
 
 }
