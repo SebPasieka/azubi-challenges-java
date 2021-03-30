@@ -25,4 +25,12 @@ public class SumPairTest {
         assertTrue(actual);
     }
 
+    @Test
+    public void findSumPair_shouldReturn_false_ifAnElementIsAddedToItself() {
+        int i = 10;
+        int sum = i + i;
+        boolean actual = SumPair.sumPairExists(sum, new int[] {i, 15, 3, 7});
+        assertFalse(actual);
+    }
+
 }
