@@ -33,31 +33,31 @@ public class MirrorProduct {
      *   product =  1002001 // palindrome yes, but there are other factors resulting in a larger product 
      */
     public static int findLargestMirrorProduct(int digits) {
-        int upper_limit = (int)Math.pow(10, digits) - 1;
-        int lower_limit = 1 + upper_limit / 10;
+        int upperLimit = (int)Math.pow(10, digits) - 1;
+        int lowerLimit = 1 + upperLimit / 10;
 
-        int max_product = 0;
+        int maxProduct = 0;
 
-        for (int i = upper_limit; i >= lower_limit; i--)
-        {
-            for (int j = i; j >= lower_limit; j--)
-            {
+        for (int i = upperLimit; i >= lowerLimit; i--) {
+            for (int j = i; j >= lowerLimit; j--) {
                 int product = i * j;
-                if (product < max_product) break;
+                if (product < maxProduct) {
+                    break;
+                }
                 int number = product;
                 int reverse = 0;
 
-                while (number != 0)
-                {
+                while (number != 0) {
                     reverse = reverse * 10 + number % 10;
                     number /= 10;
                 }
 
-                if (product == reverse && product > max_product)
-                    max_product = product;
+                if (product == reverse && product > maxProduct) {
+                    maxProduct = product;
+                }
             }
         }
-        System.out.println("The largest Palindrome of two "+ digits +" digit factors is " + max_product);
-        return max_product;
+        System.out.println("The largest Palindrome of two "+ digits +" digit factors is " + maxProduct);
+        return maxProduct;
     }
 }
