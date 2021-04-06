@@ -25,8 +25,27 @@ public class DigitPowers {
      * Find all numbers that can be written as the sum of fifth (5) powers of their digits.
      */
     public static long[] findNumbers(int power) {
-        throw new UnsupportedOperationException("Implement me!");
+        long[] solution = new long[0];
+        for (long i = 2; i <= 1000000; i++) {
+            long current = sumPowerDigits(i, power);
+            if (i == current) {
+                solution = appendToArray(solution, current);
+                }
+
+            }
+        return solution;
     }
+
+    public static long sumPowerDigits(long value, int power) {
+        long solution = 0;
+        while (value != 0) {
+            long remainder = value % 10;
+            solution += Math.pow(remainder, power);
+            value /= 10;
+        }
+        return solution;
+    }
+
 
     public static long[] appendToArray(long[] array, long newLong) {
         long[] copy = Arrays.copyOf(array, array.length + 1);

@@ -7,7 +7,7 @@ import azubi.challenges.task007.DigitPowers;
 import static org.junit.Assert.*; 
 
 public class DigitPowersTest {
-/*
+
     @Test
     public void findNumbers_shouldReturn_examples_givenExponent_4() {
         long[] actual = DigitPowers.findNumbers(4);
@@ -30,6 +30,4 @@ public class DigitPowersTest {
         assertEquals(3, original.length);
         assertEquals(4, copy.length);
     }
-
- */
 }
