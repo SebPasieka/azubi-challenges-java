@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MultiDimensionalArraysTest {
-/*
+
     @Test
     public void buildRandomMatrix_shouldHave_dimension() {
         int dimension = 3;
@@ -66,6 +66,4 @@ public class MultiDimensionalArraysTest {
         int[][] actual = MultiDimensionalArrays.buildSpiralSquare(5);
         assertArrayEquals(m, actual);
     }
-
- */
 }

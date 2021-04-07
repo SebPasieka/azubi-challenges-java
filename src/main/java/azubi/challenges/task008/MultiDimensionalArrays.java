@@ -25,8 +25,15 @@ public class MultiDimensionalArrays {
      *   -727   634 28937293
      */
     public static int[][] buildRandomMatrix(final int dimension) {
-        int randomNumber = random.nextInt();
-        throw new UnsupportedOperationException("Implement me!");
+        int[][] randomNumberMatrix = new int[dimension][dimension];
+
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < randomNumberMatrix[i].length; j++) {
+                int randomNumber = random.nextInt();
+                randomNumberMatrix[i][j] = randomNumber; // (int)(Math.random()*10);
+            }
+        }
+        return randomNumberMatrix;
     }
 
     /**
@@ -49,7 +56,12 @@ public class MultiDimensionalArrays {
      *   6 12 18
      */
     public static int[][] sumMatrices(int[][] m1, int[][] m2) {
-        throw new UnsupportedOperationException("Implement me!");
+        for (int i = 0; i < m1.length; i++) {
+            for (int j = 0; j < m2.length; j++) {
+                m1[i][j] += m2[i][j];
+            }
+        }
+        return m1;
     }
 
     /**
@@ -62,7 +74,15 @@ public class MultiDimensionalArrays {
      *   3 6 9
      */
     public static int[][] buildMatrixHavingIncreasingColumnCounts(final int dimension) {
-        throw new UnsupportedOperationException("Implement me!");
+        int[][] increasingColumnMatrix = new int[dimension][dimension];
+        int number = 0;
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < increasingColumnMatrix[i].length; j++) {
+                number++;
+                increasingColumnMatrix[j][i] = number;
+            }
+        }
+        return increasingColumnMatrix;
     }
 
     /**
@@ -82,9 +102,34 @@ public class MultiDimensionalArrays {
      *
      */
     public static int[][] buildSpiralSquare(final int dimension) {
-        throw new UnsupportedOperationException("Implement me!");
-    }
+        int[][] spiralSquareMatrix = new int[dimension][dimension];
+        int max = dimension * dimension, horizontalStart = 0, horizontalEnd = dimension - 1, perpendicularStart = 0, perpendicularEnd = dimension - 1;
+        if (dimension % 2 != 0) {
+            while (max >= 1) {
+                for (int i = horizontalEnd; i >= horizontalStart; i--) {
+                    spiralSquareMatrix[perpendicularStart][i] = max--;
+                }
 
+                for (int j = perpendicularStart + 1; j <= perpendicularEnd - 1; j++) {
+                    spiralSquareMatrix[j][horizontalStart] = max--;
+                }
+
+                for (int i = horizontalStart; i <= horizontalEnd - 1; i++) {
+                    spiralSquareMatrix[perpendicularEnd][i] = max--;
+                }
+
+                for (int j = perpendicularEnd; j >= perpendicularStart + 1; j--) {
+                    spiralSquareMatrix[j][horizontalEnd] = max--;
+                }
+                horizontalStart++;
+                horizontalEnd--;
+                perpendicularStart++;
+                perpendicularEnd--;
+            }
+            return spiralSquareMatrix;
+        }
+        throw new IllegalArgumentException("please use an odd parameter");
+    }
     // --- utility methods, feel free to use
 
     public static void printMatrix(int[][] square) {
