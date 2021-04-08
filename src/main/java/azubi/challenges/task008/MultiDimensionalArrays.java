@@ -102,29 +102,30 @@ public class MultiDimensionalArrays {
      *
      */
     public static int[][] buildSpiralSquare(final int dimension) {
-        int[][] spiralSquareMatrix = new int[dimension][dimension];
-        int max = dimension * dimension, horizontalStart = 0, horizontalEnd = dimension - 1, perpendicularStart = 0, perpendicularEnd = dimension - 1;
         if (dimension % 2 != 0) {
+            int[][] spiralSquareMatrix = new int[dimension][dimension];
+            int max = dimension * dimension, horizontalStart = 0, horizontalEnd = dimension - 1, verticalStart = 0, verticalEnd = dimension - 1;
+
             while (max >= 1) {
                 for (int i = horizontalEnd; i >= horizontalStart; i--) {
-                    spiralSquareMatrix[perpendicularStart][i] = max--;
+                    spiralSquareMatrix[verticalStart][i] = max--;
                 }
 
-                for (int j = perpendicularStart + 1; j <= perpendicularEnd - 1; j++) {
+                for (int j = verticalStart + 1; j <= verticalEnd - 1; j++) {
                     spiralSquareMatrix[j][horizontalStart] = max--;
                 }
 
                 for (int i = horizontalStart; i <= horizontalEnd - 1; i++) {
-                    spiralSquareMatrix[perpendicularEnd][i] = max--;
+                    spiralSquareMatrix[verticalEnd][i] = max--;
                 }
 
-                for (int j = perpendicularEnd; j >= perpendicularStart + 1; j--) {
+                for (int j = verticalEnd; j >= verticalStart + 1; j--) {
                     spiralSquareMatrix[j][horizontalEnd] = max--;
                 }
                 horizontalStart++;
                 horizontalEnd--;
-                perpendicularStart++;
-                perpendicularEnd--;
+                verticalStart++;
+                verticalEnd--;
             }
             return spiralSquareMatrix;
         }
